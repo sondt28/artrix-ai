@@ -1,5 +1,6 @@
 package com.son.myapplication.ui.screen
 
+import android.net.Uri
 import android.util.Log
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.ViewModel
@@ -15,6 +16,10 @@ class MainViewModel(private val styleRepository: StyleRepository) : ViewModel() 
     val uiState = _uiState.asStateFlow()
 
     init {
+        fetchStyles()
+    }
+
+    private fun fetchStyles() {
         viewModelScope.launch {
             when (val styles = styleRepository.getStyles()) {
                 is NetworkResult.Success -> {
@@ -34,8 +39,13 @@ class MainViewModel(private val styleRepository: StyleRepository) : ViewModel() 
             }
         }
     }
+
+    fun setCurrentImage(image: Uri) {
+        _uiState.value = _uiState.value.copy(currentImage = image.toString())
+    }
 }
 
 data class MainUiState(
     val listStyle: List<Style>? = null,
+    val currentImage: String? = null
 )

@@ -31,18 +31,6 @@ fun buildRetrofit(baseUrl: String): Retrofit {
         .build()
 }
 
-fun provideSignatureService(): ApiSignatureDataService {
-    return buildRetrofit(BASE_URL_SIGNATURE_SERVICE).create(ApiSignatureDataService::class.java)
-}
-
-fun provideStyleService(): StyleService {
-    return buildRetrofit(BASE_URL_STYLE_SERVICE).create(StyleService::class.java)
-}
-
-fun provideGenerateService(): ImageGenerationService {
-    return buildRetrofit(BASE_URL_GENERATE_SERVICE).create(ImageGenerationService::class.java)
-}
-
 object ApiService {
     val generateService: ImageGenerationService by lazy {
         buildRetrofit(BASE_URL_GENERATE_SERVICE).create(ImageGenerationService::class.java)
