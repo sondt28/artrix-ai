@@ -1,120 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.screen.MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <View
-        android:id="@+id/vBackgroundPrompt"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/bg_radius_16"
-        app:layout_constraintHeight_percent="0.1"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        tools:context=".ui.screen.MainActivity">
 
-    <EditText
-        android:id="@+id/edtPrompt"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="12dp"
-        android:background="@null"
-        android:gravity="top"
-        android:hint="Enter your prompt..."
-        android:textColorHint="#66000000"
-        app:layout_constraintBottom_toBottomOf="@+id/vBackgroundPrompt"
-        app:layout_constraintEnd_toStartOf="@+id/imgClose"
-        app:layout_constraintStart_toStartOf="@+id/vBackgroundPrompt"
-        app:layout_constraintTop_toTopOf="@+id/imgClose" />
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupAddPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="txtAddPhoto, imgAddPhoto" />
 
-    <ImageView
-        android:id="@+id/imgClose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_close"
-        app:layout_constraintEnd_toEndOf="@+id/vBackgroundPrompt"
-        app:layout_constraintTop_toTopOf="@+id/vBackgroundPrompt" />
+        <View
+            android:id="@+id/vBackgroundPrompt"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/bg_radius_16"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:elevation="1dp"
-        android:id="@+id/vBackgroundAddPhoto"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginVertical="25dp"
-        android:background="@drawable/bg_radius_16"
-        app:layout_constraintBottom_toTopOf="@+id/txtChooseStyle"
-        app:layout_constraintEnd_toEndOf="@+id/vBackgroundPrompt"
-        app:layout_constraintStart_toStartOf="@+id/vBackgroundPrompt"
-        app:layout_constraintTop_toBottomOf="@+id/vBackgroundPrompt" />
+        <EditText
+            android:id="@+id/edtPrompt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="Enter your prompt..."
+            android:textColorHint="#66000000"
+            app:layout_constraintBottom_toBottomOf="@+id/vBackgroundPrompt"
+            app:layout_constraintEnd_toStartOf="@+id/imgClose"
+            app:layout_constraintStart_toStartOf="@+id/vBackgroundPrompt"
+            app:layout_constraintTop_toTopOf="@+id/imgClose" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_gallery"
-        app:layout_constraintBottom_toTopOf="@+id/txtAddPhoto"
-        app:layout_constraintEnd_toEndOf="@+id/vBackgroundAddPhoto"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/vBackgroundAddPhoto"
-        app:layout_constraintTop_toTopOf="@+id/vBackgroundAddPhoto"
-        app:layout_constraintVertical_chainStyle="packed" />
+        <ImageView
+            android:id="@+id/imgClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="@+id/vBackgroundPrompt"
+            app:layout_constraintTop_toTopOf="@+id/vBackgroundPrompt" />
 
-    <TextView
-        android:id="@+id/txtAddPhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:fontFamily="@font/plus_jakarta_sans_medium"
-        android:text="Add your photo"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/vBackgroundAddPhoto"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        <View
+            android:id="@+id/vBackgroundAddPhoto"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="25dp"
+            android:background="@drawable/bg_radius_16"
+            android:elevation="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/txtChooseStyle"
+            app:layout_constraintEnd_toEndOf="@+id/vBackgroundPrompt"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/vBackgroundPrompt"
+            app:layout_constraintTop_toBottomOf="@+id/vBackgroundPrompt"
+            app:layout_constraintVertical_bias="0.45" />
 
-    <TextView
-        android:id="@+id/txtChooseStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="14dp"
-        android:fontFamily="@font/plus_jakarta_sans_bold"
-        android:text="Choose your Style"
-        android:textColor="#E400D9"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/rcStyle"
-        app:layout_constraintStart_toStartOf="@+id/rcStyle" />
+        <ImageView
+            android:id="@+id/imgChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/ic_change"
+            android:visibility="gone"
+            android:elevation="2dp"
+            app:layout_constraintStart_toStartOf="@+id/vBackgroundAddPhoto"
+            app:layout_constraintTop_toTopOf="@+id/vBackgroundAddPhoto" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/btnGen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/vBackgroundPrompt"
-        tools:listitem="@layout/item_style" />
+        <ImageView
+            android:id="@+id/imgPreview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/vBackgroundAddPhoto"
+            app:layout_constraintEnd_toEndOf="@+id/vBackgroundAddPhoto"
+            app:layout_constraintStart_toStartOf="@+id/vBackgroundAddPhoto"
+            app:layout_constraintTop_toTopOf="@+id/vBackgroundAddPhoto" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnGen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginBottom="80dp"
-        android:background="@drawable/bg_gen"
-        android:text="Generate AI"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/imgAddPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_gallery"
+            app:layout_constraintBottom_toTopOf="@+id/txtAddPhoto"
+            app:layout_constraintEnd_toEndOf="@+id/vBackgroundAddPhoto"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/vBackgroundAddPhoto"
+            app:layout_constraintTop_toTopOf="@+id/vBackgroundAddPhoto"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/txtAddPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/plus_jakarta_sans_medium"
+            android:text="Add your photo"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/vBackgroundAddPhoto"
+            app:layout_constraintEnd_toEndOf="@+id/imgAddPhoto"
+            app:layout_constraintStart_toStartOf="@+id/imgAddPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/imgAddPhoto" />
+
+        <TextView
+            android:id="@+id/txtChooseStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:text="Choose your Style"
+            android:textColor="#E400D9"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/rcStyle"
+            app:layout_constraintStart_toStartOf="@+id/rcStyle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/btnGen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/vBackgroundPrompt"
+            tools:listitem="@layout/item_style" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnGen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="80dp"
+            android:background="@drawable/bg_gen"
+            android:text="Generate AI"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

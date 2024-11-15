@@ -1,10 +1,13 @@
 package com.son.myapplication.ui.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.son.myapplication.R
 import com.son.myapplication.data.model.Style
 import com.son.myapplication.databinding.ItemStyleBinding
 
@@ -13,6 +16,9 @@ class StyleAdapter : ListAdapter<Style, StyleAdapter.StyleViewHolder>(diffCallba
         RecyclerView.ViewHolder(binding.root) {
         fun bind(style: Style) {
             binding.txtStyle.text = style.name
+            Glide.with(binding.root.context)
+                .load(style.key)
+                .into(binding.imgStyle)
 
         }
     }
