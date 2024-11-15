@@ -7,14 +7,12 @@ import com.son.myapplication.data.network.interceptor.loggingInterceptor
 import com.son.myapplication.data.network.source.ApiSignatureDataService
 import com.son.myapplication.data.network.source.ImageGenerationService
 import com.son.myapplication.data.network.source.StyleService
+import com.son.myapplication.util.Constant.BASE_URL_GENERATE_SERVICE
+import com.son.myapplication.util.Constant.BASE_URL_SIGNATURE_SERVICE
+import com.son.myapplication.util.Constant.BASE_URL_STYLE_SERVICE
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
-
-const val BASE_URL_SIGNATURE_SERVICE = "https://image-generator.dev.apero.vn"
-const val BASE_URL_STYLE_SERVICE = "https://style-management-api.dev.apero.vn"
-const val BASE_URL_GENERATE_SERVICE = "https://image-generator.dev.apero.vn"
 
 fun buildGson(): Gson = GsonBuilder().setLenient().create()
 

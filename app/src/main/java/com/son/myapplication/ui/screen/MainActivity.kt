@@ -20,6 +20,7 @@ import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.son.myapplication.databinding.ActivityMainBinding
 import com.son.myapplication.ui.adapter.StyleAdapter
+import com.son.myapplication.util.FileUtil
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.launchIn
@@ -101,10 +102,14 @@ class MainActivity : AppCompatActivity() {
         binding.vBackgroundAddPhoto.setOnClickListener {
             checkPermission()
         }
+
+        styleAdapter.onItemClickListener = {
+        }
     }
 
     private fun setupData() {
         binding.rcStyle.adapter = styleAdapter
+
     }
 
     private fun setupObserver() {

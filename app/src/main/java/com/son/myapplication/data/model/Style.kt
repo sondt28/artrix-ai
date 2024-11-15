@@ -19,4 +19,5 @@ data class Style(
     val key: String,
     @SerializedName("aiFamily")
     val aiFamily: String,
+    val isSelected: Boolean = false
 )
